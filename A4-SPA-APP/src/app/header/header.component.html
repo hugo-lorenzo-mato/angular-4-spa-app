@@ -1,0 +1,15 @@
+<div style="text-align:center">
+  <h3>Vamos a crear un selector</h3>
+  <input type="text" [(ngModel)]="color_seleccionado"/>
+  <div [ngStyle]="{'background': color_seleccionado,
+   'width': '300px',
+   'height': '300px',
+   'margin-left': '40%',
+   'margin-top':'2%'}">
+  </div>
+  <pre [style.border]="color_seleccionado == 'red' ? '5px solid black' : 'none'">
+    <p> Color seleccionado: </p>
+    <p>{{color_seleccionado}}</p>
+  </pre>
+   <button (click)="logColorSeleccionado()">Mostrar log</button>
+</div>
