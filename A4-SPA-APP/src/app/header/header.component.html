@@ -1,6 +1,6 @@
 <div style="text-align:center">
   <h3>Vamos a crear un selector</h3>
-  <input type="text" [(ngModel)]="color_seleccionado"/>
+  <input type="text" [(ngModel)]="color_seleccionado" />
   <div [ngStyle]="{'background': color_seleccionado,
    'width': '300px',
    'height': '300px',
@@ -11,5 +11,13 @@
     <p> Color seleccionado: </p>
     <p>{{color_seleccionado}}</p>
   </pre>
-   <button (click)="logColorSeleccionado()">Mostrar log</button>
+  <button (click)="logColorSeleccionado()">Mostrar log</button>
+  <div class="alert info" *ngIf=parametro>
+    <span class="closebtn">&times;</span>
+    <strong>Info!</strong> <strong>{{parametro}}</strong>
+  </div>
+
+  <div *ngIf=!parametro>
+    <button (click)="redirigir()">Ir la página con parámetro</button>
+  </div>
 </div>
