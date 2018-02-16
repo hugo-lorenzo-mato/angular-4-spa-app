@@ -24,7 +24,7 @@ pipeline {
         }
         stage('2.1') {
           steps {
-            emailext(subject: 'ahora si', body: 'pues parece que esto va', attachLog: true, compressLog: true, from: 'hugo.lorenzomato@gmail.com', replyTo: 'lobocurrante@gmail.com', to: 'programadorwebs1@gmail.com')
+            emailext(subject: 'ahora si', body: 'pues parece que esto va', from: 'hugo.lorenzomato@gmail.com', replyTo: 'lobocurrante@gmail.com', to: 'programadorwebs1@gmail.com')
           }
         }
       }
@@ -34,7 +34,7 @@ pipeline {
         bat(script: 'echo \'hugo\'', encoding: 'UTF-8', returnStatus: true, returnStdout: true)
       }
     }
-    stage('') {
+    stage('error') {
       steps {
         pwd(tmp: true)
       }
