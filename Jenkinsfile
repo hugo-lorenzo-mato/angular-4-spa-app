@@ -43,9 +43,10 @@ pipeline {
         }
       }
     }
-    stage('error') {
+    stage('4') {
       steps {
         pwd(tmp: true)
+        sh 'ls'
       }
     }
   }
