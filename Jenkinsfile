@@ -30,17 +30,8 @@ pipeline {
       }
     }
     stage('3') {
-      parallel {
-        stage('3') {
-          steps {
-            bat(script: 'echo \'hugo\'', encoding: 'UTF-8', returnStatus: true, returnStdout: true)
-          }
-        }
-        stage('3.1') {
-          steps {
-            powershell(script: 'ls', returnStatus: true, returnStdout: true, encoding: 'utf-8')
-          }
-        }
+      steps {
+        bat(script: 'echo \'hugo\'', encoding: 'UTF-8', returnStatus: true, returnStdout: true)
       }
     }
     stage('4') {
