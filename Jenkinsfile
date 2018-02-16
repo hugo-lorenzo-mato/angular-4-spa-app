@@ -24,7 +24,7 @@ pipeline {
         }
         stage('2.1') {
           steps {
-            emailext(subject: 'ahora si', body: 'pues parece que esto va', from: 'hugo.lorenzomato@gmail.com', replyTo: 'hugo.lorenzomato@gmail.com')
+            emailext(subject: 'ahora si', body: 'pues parece que esto va', from: 'hugo.lorenzomato@gmail.com', to: 'hugo.lorenzomato@gmail.com')
           }
         }
       }
