@@ -34,5 +34,10 @@ pipeline {
         bat(script: 'echo \'hugo\'', encoding: 'UTF-8', returnStatus: true, returnStdout: true)
       }
     }
+    stage('') {
+      steps {
+        pwd(tmp: true)
+      }
+    }
   }
 }
