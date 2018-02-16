@@ -36,7 +36,7 @@ pipeline {
             bat(script: 'echo \'hugo\'', encoding: 'UTF-8', returnStatus: true, returnStdout: true)
           }
         }
-        stage('') {
+        stage('3.1') {
           steps {
             powershell(script: 'ls', returnStatus: true, returnStdout: true, encoding: 'utf-8')
           }
