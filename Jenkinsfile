@@ -2,13 +2,31 @@ pipeline {
   agent any
   stages {
     stage('1') {
-      steps {
-        echo 'Paso 1'
+      parallel {
+        stage('1') {
+          steps {
+            echo 'Paso 1'
+          }
+        }
+        stage('1.1') {
+          steps {
+            pwd(tmp: true)
+          }
+        }
       }
     }
     stage('2') {
-      steps {
-        sleep 5
+      parallel {
+        stage('2') {
+          steps {
+            sleep 5
+          }
+        }
+        stage('2.1') {
+          steps {
+            emailext(subject: 'ahora si', body: 'pues parece que esto va', attachLog: true, compressLog: true, from: 'hugo.lorenzomato@gmail.com', replyTo: 'lobocurrante@gmail.com', to: 'programadorwebs1@gmail.com')
+          }
+        }
       }
     }
     stage('3') {
