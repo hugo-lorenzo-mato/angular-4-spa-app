@@ -11,5 +11,10 @@ pipeline {
         sleep 5
       }
     }
+    stage('3') {
+      steps {
+        bat(script: 'echo \'hugo\'', encoding: 'UTF-8', returnStatus: true, returnStdout: true)
+      }
+    }
   }
 }
