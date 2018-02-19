@@ -45,8 +45,17 @@ pipeline {
       }
     }
     stage('5') {
-      steps {
-        writeFile(file: 'hugotestjenkins.txt', text: 'Correcto', encoding: 'UTF-8')
+      parallel {
+        stage('5') {
+          steps {
+            writeFile(file: 'hugotestjenkins.txt', text: 'Correcto', encoding: 'UTF-8')
+          }
+        }
+        stage('') {
+          steps {
+            mail(subject: 'Ejecución proceso completada', body: 'Se ha completado la ejecución del proceso', charset: 'UTF-8', from: 'hugo.lorenzomato@gmail.com', to: 'hlorenzo@enxenio.es')
+          }
+        }
       }
     }
   }
