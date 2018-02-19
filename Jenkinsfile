@@ -13,9 +13,9 @@ pipeline {
             pwd(tmp: true)
           }
         }
-        stage('') {
+        stage('1.2') {
           steps {
-            bat(script: 'mvn', encoding: 'UTF-8')
+            isUnix()
           }
         }
       }
