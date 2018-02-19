@@ -46,7 +46,7 @@ pipeline {
     }
     stage('5') {
       steps {
-        writeFile(file: 'test', text: 'Correcto', encoding: 'UTF-8')
+        writeFile(file: 'hugotestjenkins.txt', text: 'Correcto', encoding: 'UTF-8')
       }
     }
   }
