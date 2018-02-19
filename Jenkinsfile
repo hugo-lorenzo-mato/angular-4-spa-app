@@ -13,6 +13,11 @@ pipeline {
             pwd(tmp: true)
           }
         }
+        stage('') {
+          steps {
+            bat(script: 'mvn', encoding: 'UTF-8')
+          }
+        }
       }
     }
     stage('2') {
@@ -37,7 +42,6 @@ pipeline {
     stage('4') {
       steps {
         pwd(tmp: true)
-        sh 'ls'
       }
     }
   }
