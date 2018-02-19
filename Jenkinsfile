@@ -44,5 +44,10 @@ pipeline {
         pwd(tmp: true)
       }
     }
+    stage('5') {
+      steps {
+        writeFile(file: 'test', text: 'Correcto', encoding: 'UTF-8')
+      }
+    }
   }
 }
